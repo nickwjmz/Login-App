@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Login App</string>
+    <string name="tv_greenflag_access">GreenFlag customers can create an account to access</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="tv_reason3">Policy information</string>
+    <string name="tv_reason2">Request a rescue online</string>
+    <string name="tv_reason1">Car health updates</string>
+    <string name="et_email">Email address</string>
+    <string name="et_create_pw">Create password</string>
+    <string name="et_repeat_pw">Repeat password</string>
+    <string name="see_criteria_below">See criteria below</string>
+    <string name="btn_next">Next</string>
+    <string name="tv_pw_explain">Your password should have a minimum of 8 characters and contain at least one number, one uppercase and one lowercase letter. You can use special characters.</string>
 </resources>

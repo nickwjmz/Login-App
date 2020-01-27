@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    >
+
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="291dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/tvCreatePw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etCreatePw"
+        android:layout_width="291dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:hint="@string/see_criteria_below"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/tvRepeatPw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etRepeatPw"
+        android:layout_width="291dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/tvPwConstraints"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="204dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="116dp"
+        android:text="@string/et_email"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/etEmail"
+        app:layout_constraintStart_toStartOf="@id/etEmail"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.818" />
+
+    <TextView
+        android:id="@+id/tvCreatePw"
+        android:layout_width="202dp"
+        android:layout_height="39dp"
+        android:text="@string/et_create_pw"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/etCreatePw"
+        app:layout_constraintStart_toStartOf="@id/etCreatePw"
+        tools:layout_editor_absoluteX="59dp" />
+
+    <TextView
+        android:id="@+id/tvRepeatPw"
+        android:layout_width="213dp"
+        android:layout_height="48dp"
+        android:text="@string/et_repeat_pw"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/etRepeatPw"
+        app:layout_constraintStart_toStartOf="@id/etRepeatPw"
+        tools:layout_editor_absoluteX="61dp" />
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="291dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/btn_next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPwConstraints"
+        android:layout_width="287dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/tv_pw_explain"
+        android:textColor="#FFFFFF"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnNext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

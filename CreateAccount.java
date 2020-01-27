@@ -1,6 +1,8 @@
 package com.example.loginapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
@@ -151,10 +153,15 @@ public class CreateAccount extends AppCompatActivity {
             }
         });
 
-        if (validateConfirm() && validateEmail() && validatePassword()) {
+        while (validateConfirm() && validateEmail() && validatePassword()) {
             Button b = findViewById(R.id.btnNext);
             b.setEnabled(true);
         }
     }
 
+    public void UserInfo(View view) {
+        Intent intent = new Intent();
+        intent.setClass(CreateAccount.this, UserInfo.class);
+        startActivity(intent);
+    }
 }

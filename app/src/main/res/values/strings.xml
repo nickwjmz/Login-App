@@ -13,4 +13,7 @@
     <string name="tv_pw_explain">Your password should have a minimum of 8 characters and contain at least one number, one uppercase and one lowercase letter. You can use special characters.</string>
     <string name="error_email">An account already exists for this email address.</string>
     <string name="error_pw">One of the passwords you entered doesn\'t match</string>
+    <string name="et_hint_name">Name</string>
+    <string name="et_hint_username">Username</string>
+    <string name="et_hint_password">Password</string>
 </resources>

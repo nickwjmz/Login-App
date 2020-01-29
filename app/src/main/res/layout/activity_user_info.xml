@@ -7,16 +7,19 @@
     tools:context=".UserInfo">
 
     <EditText
+        android:id="@+id/et_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name"/>
+        android:hint="@string/et_hint_name"/>
     <EditText
+        android:id="@+id/et_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Username"/>
+        android:hint="@string/et_hint_username"/>
     <EditText
+        android:id="@+id/et_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"/>
+        android:hint="@string/et_hint_password"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

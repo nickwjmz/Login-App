@@ -1,6 +1,8 @@
 package com.example.loginapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
@@ -23,9 +25,13 @@ public class CreateAccount extends AppCompatActivity {
 
         if (emailInput.isEmpty()) {
             textInputEmail.setError("Field cannot be empty");
+            textInputEmail.setCompoundDrawablesWithIntrinsicBounds(0,0,
+                    0, 0);
             return false;
         } else if (!Patterns.EMAIL_ADDRESS.matcher(emailInput).matches()) {
             textInputEmail.setError("Please enter a valid email address");
+            textInputEmail.setCompoundDrawablesWithIntrinsicBounds(0,0,
+                    0, 0);
             return false;
         } else {
             textInputEmail.setError(null);
@@ -40,9 +46,13 @@ public class CreateAccount extends AppCompatActivity {
 
         if (passwordInput.isEmpty()) {
             textInputPassword.setError("Field cannot be empty");
+            textInputPassword.setCompoundDrawablesWithIntrinsicBounds(0, 0,
+                    0, 0);
             return false;
         } else if (!PASSWORD_PATTERN.matcher(passwordInput).matches()) {
             textInputPassword.setError("Password too weak");
+            textInputPassword.setCompoundDrawablesWithIntrinsicBounds(0, 0,
+                    0, 0);
             return false;
         } else {
             textInputPassword.setError(null);
@@ -58,9 +68,13 @@ public class CreateAccount extends AppCompatActivity {
 
         if (!confirmInput.equals(passwordInput)) {
             textInputConfirm.setError("Your passwords do not match");
+            textInputConfirm.setCompoundDrawablesWithIntrinsicBounds(0,0,
+                    0,0);
             return false;
         } else if (passwordInput.isEmpty()) {
             textInputConfirm.setError("Field cannot be empty");
+            textInputConfirm.setCompoundDrawablesWithIntrinsicBounds(0,0,
+                    0,0);
             return false;
         }
         else {
@@ -76,7 +90,7 @@ public class CreateAccount extends AppCompatActivity {
                     "(?=.*[0-9])" +         //at least 1 digit
                     "(?=.*[a-z])" +         //at least 1 lower case letter
                     "(?=.*[A-Z])" +         //at least 1 upper case letter
-                    "(?=.*[@#$%^&+=])" +    //at least 1 special character
+                    "(?=.*[@#$()%^&!+=])" +    //at least 1 special character
                     ".{8,}" +               //at least 8 characters
                     "$");
 
@@ -133,8 +147,6 @@ public class CreateAccount extends AppCompatActivity {
                 if (!hasFocus) {
                     if (validateConfirm()) {
                         passwordError.setVisibility(View.GONE);
-                        textInputConfirm.setCompoundDrawablesWithIntrinsicBounds(0,0,
-                                R.drawable.tick, 0);
                     } else {
                         passwordError.setVisibility(View.VISIBLE);
                     }
@@ -146,6 +158,12 @@ public class CreateAccount extends AppCompatActivity {
             Button b = findViewById(R.id.btnNext);
             b.setEnabled(true);
         }
+    }
+
+    public void UserInfo(View view) {
+        Intent intent = new Intent();
+        intent.setClass(CreateAccount.this, UserInfo.class);
+        startActivity(intent);
     }
 
 }

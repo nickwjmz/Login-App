@@ -40,6 +40,8 @@
         android:layout_width="350dp"
         android:layout_height="48dp"
         android:layout_gravity="center"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
         android:layout_marginBottom="32dp"
         android:background="#FFFFFF"
         app:errorEnabled="true"
@@ -76,7 +78,8 @@
         android:layout_marginBottom="32dp"
         android:background="#FFFFFF"
         android:ems="10"
-        android:textAlignment="center"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
         app:errorEnabled="true"
         android:hint="@string/see_criteria_below"
         android:inputType="textPassword" />
@@ -96,6 +99,8 @@
         android:layout_height="48dp"
         android:layout_gravity="center"
         android:layout_marginBottom="32dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
         android:background="#FFFFFF"
         android:ems="10"
         app:errorEnabled="true"
@@ -129,9 +134,9 @@
         android:layout_height="64dp"
         android:background="@drawable/gradient_button_background"
         android:layout_gravity="center"
-        android:enabled="false"
         android:text="@string/btn_next"
         android:textAllCaps="false"
+        android:onClick="UserInfo"
         android:textColor="#000000"
         android:textSize="24sp" />
 

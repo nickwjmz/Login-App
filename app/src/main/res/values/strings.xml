@@ -16,4 +16,14 @@
     <string name="et_hint_name">Name</string>
     <string name="et_hint_username">Username</string>
     <string name="et_hint_password">Password</string>
+    <string name="btn_text_change_photo">Change Photo</string>
+    <string name="btn_text_choose_birth_date">Choose birth date</string>
+    <string name="tv_age">Age</string>
+    <string name="tv_hint_choose_country">Choose country</string>
+    <string name="rb_text_gender">Gender</string>
+    <string name="tv_text_gender">Gender</string>
+    <string name="rb_text_female">Female</string>
+    <string name="rb_text_male">Male</string>
+    <string name="rb_text_not_specified">Not specified</string>
+    <string name="et_hint_postal_address">Postal Address (Opt)</string>
 </resources>

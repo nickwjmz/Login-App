@@ -27,4 +27,15 @@
     <string name="rb_text_not_specified">Not specified</string>
     <string name="et_hint_postal_address">Postal Address (Opt)</string>
     <string name="btn_save_user_info">Save</string>
+    <string-array name="spinner_choose_country">
+        <item name="spinner_item_us">United States<</item>
+        <item name="spinner_item_ma">Malaysia<</item>
+        <item name="spinner_item_ia">Indonesia<</item>
+        <item name="spinner_item_fr">France<</item>
+        <item name="spinner_item_it">Italy<</item>
+        <item name="spinner_item_Sg">Singapore<</item>
+        <item name="spinner_item_nz">New Zealand<</item>
+        <item name="spinner_item_in">India<</item>
+    </string-array>
+
 </resources>

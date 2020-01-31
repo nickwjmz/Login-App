@@ -27,7 +27,10 @@
     <string name="rb_text_not_specified">Not specified</string>
     <string name="et_hint_postal_address">Postal Address (Opt)</string>
     <string name="btn_save_user_info">Save</string>
+    <string name="spinner_prompt">Choose a country</string>
+    <string name="iv_cd_android_pic">Android pic</string>
     <string-array name="spinner_choose_country">
+        <item name="spinner_not_specified">Not Specified</item>
         <item name="spinner_item_us">United States</item>
         <item name="spinner_item_ma">Malaysia</item>
         <item name="spinner_item_ia">Indonesia</item>

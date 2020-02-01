@@ -1,5 +1,6 @@
 package com.example.loginapp;
 
+import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -16,20 +17,23 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
         notifyDataSetChanged();
     }
 
-
     @NonNull
     @Override
     public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        return new UserViewHolder(
+                LayoutInflater.from(parent.getContext()).inflate(R.layout.user_layout,
+                                    parent, false)
+        );
     }
 
     @Override
     public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
+        holder.onBind(dataSet.get(position));
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return dataSet != null ? dataSet.size() : 0;
     }
 }

@@ -48,6 +48,11 @@ public class UserInfo extends AppCompatActivity {
         Log.d(TAG, "onCreate: ");
 
         setContentView(R.layout.activity_user_info);
+        etName = findViewById(R.id.et_name);
+        etUsername = findViewById(R.id.et_username);
+        etPostalAddress = findViewById(R.id.et_postal_address);
+        spUserCountry = findViewById(R.id.sp_user_country);
+        btnChangePhoto = findViewById(R.id.btn_change_photo);
         etAge = findViewById(R.id.et_age);
         btnDatePicker = findViewById(R.id.btn_choose_birthday);
 
@@ -70,26 +75,7 @@ public class UserInfo extends AppCompatActivity {
                 picker.show();
             }
         });
-
-        btnSaveUserInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(UserInfo.this, ListOfUsers.class);
-                PojoUsers userInfo = new PojoUsers();
-
-                userInfo.setName(etName.getText().toString());
-                userInfo.setUsername(etUsername.getText().toString());
-                userInfo.setBirthday(userBday);
-                userInfo.setCountry(spUserCountry.getSelectedItem().toString());
-                userInfo.setGender(gender);
-                userInfo.setPostalAddress(etPostalAddress.getText().toString());
-
-                intent.putExtra("data", userInfo);
-                startActivity(intent);
-            }
-        });
-    }
+   }
 
     public void onRadioButtonClicked(View view) {
         // Is the button now checked?
@@ -125,6 +111,22 @@ public class UserInfo extends AppCompatActivity {
             age--;
         }
         return age;
+    }
+
+    public void ListOfUsers(View view) {
+        Intent intent = new Intent();
+        intent.setClass(UserInfo.this, ListOfUsers.class);
+        PojoUsers userInfo = new PojoUsers();
+
+        userInfo.setName(etName.getText().toString());
+        userInfo.setUsername(etUsername.getText().toString());
+        userInfo.setBirthday(userBday);
+        userInfo.setCountry(spUserCountry.getSelectedItem().toString());
+        userInfo.setGender(gender);
+        userInfo.setPostalAddress(etPostalAddress.getText().toString());
+
+        intent.putExtra("data", userInfo);
+        startActivity(intent);
     }
 }
 

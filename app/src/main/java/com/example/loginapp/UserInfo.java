@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.content.Context;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
@@ -17,14 +20,26 @@ import androidx.fragment.app.FragmentTransaction;
 
 import java.time.Year;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 
 public class UserInfo extends AppCompatActivity {
 
     private static final String TAG = "UserInfo";
 
+    EditText etName;
+    EditText etUsername;
+    Button btnChangePhoto;
     EditText etAge;
+    RadioGroup rgChooseGender;
+    Spinner spUserCountry;
+    EditText etPostalAddress;
+    Button btnSaveUserInfo;
     Button btnDatePicker;
+
+    String userBday;
+    String gender;
+
     DatePickerDialog picker;
 
     @Override
@@ -48,6 +63,7 @@ public class UserInfo extends AppCompatActivity {
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                                userBday = month+"/"+dayOfMonth+"/"+year;
                                 etAge.setText(String.valueOf(getAge(year, month, dayOfMonth)));
                             }
                         }, year, monthOfYear, dayOfMonth);
@@ -55,8 +71,49 @@ public class UserInfo extends AppCompatActivity {
             }
         });
 
-   }
+        btnSaveUserInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(UserInfo.this, ListOfUsers.class);
+                PojoUsers userInfo = new PojoUsers();
 
+                userInfo.setName(etName.getText().toString());
+                userInfo.setUsername(etUsername.getText().toString());
+                userInfo.setBirthday(userBday);
+                userInfo.setCountry(spUserCountry.getSelectedItem().toString());
+                userInfo.setGender(gender);
+                userInfo.setPostalAddress(etPostalAddress.getText().toString());
+
+                intent.putExtra("data", userInfo);
+                startActivity(intent);
+            }
+        });
+    }
+
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.rb_female:
+                if (checked)
+                    gender = "female";
+                    // Pirates are the best
+                    break;
+            case R.id.rb_male:
+                if (checked)
+                    gender = "male";
+                    // Ninjas rule
+                    break;
+            case R.id.rb_not_specified:
+                if (checked)
+                    gender = "Not specified";
+                    // not specified
+                    break;
+        }
+    }
     public int getAge( int year, int month, int day){
         Calendar dob = Calendar.getInstance();
         Calendar today = Calendar.getInstance();
@@ -68,12 +125,6 @@ public class UserInfo extends AppCompatActivity {
             age--;
         }
         return age;
-    }
-
-    public void ListOfUsers(View view) {
-        Intent intent = new Intent();
-        intent.setClass(UserInfo.this, ListOfUsers.class);
-        startActivity(intent);
     }
 }
 

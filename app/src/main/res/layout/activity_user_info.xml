@@ -136,6 +136,7 @@
             android:buttonTint="#FFFFFF"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
+            android:onClick="onRadioButtonClicked"
             android:text="@string/rb_text_female"
             android:textColor="#FFFFFF" />
 
@@ -147,6 +148,7 @@
             android:background="#000000"
             android:buttonTint="#FFFFFF"
             android:text="@string/rb_text_male"
+            android:onClick="onRadioButtonClicked"
             android:textColor="#FFFFFF" />
 
         <RadioButton
@@ -158,6 +160,7 @@
             android:buttonTint="#FFFFFF"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
+            android:onClick="onRadioButtonClicked"
             android:text="@string/rb_text_not_specified"
             android:textColor="#FFFFFF" />
     </RadioGroup>
@@ -210,7 +213,8 @@
         android:textAllCaps="false"
         app:layout_constraintBaseline_toBaselineOf="@id/et_postal_address"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/et_postal_address" />
+        app:layout_constraintStart_toEndOf="@+id/et_postal_address"
+        android:onClick="ListOfUsers"/>
 
     <ImageView
         android:id="@+id/iv_user_photo"

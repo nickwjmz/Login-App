@@ -20,7 +20,6 @@
     <string name="btn_text_choose_birth_date">Choose birth date</string>
     <string name="tv_age">Age</string>
     <string name="tv_hint_choose_country">Choose country</string>
-    <string name="rb_text_gender">Gender</string>
     <string name="tv_text_gender">Gender</string>
     <string name="rb_text_female">Female</string>
     <string name="rb_text_male">Male</string>

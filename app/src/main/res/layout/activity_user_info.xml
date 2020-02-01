@@ -72,10 +72,10 @@
         android:text="@string/btn_text_choose_birth_date"
         android:textAllCaps="false"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_age" />
+        app:layout_constraintTop_toBottomOf="@id/et_age"/>
 
     <EditText
-        android:importantForAutofill="no"
+        android:importantForAutofill="yes"
         android:id="@+id/et_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -111,28 +111,6 @@
         app:layout_constraintTop_toBottomOf="@id/btn_change_photo"
         android:importantForAutofill="no" />
 
-
-    <FrameLayout
-        android:id="@+id/frame_layout_cal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-        <DatePicker
-            android:id="@+id/date_picker"
-            android:layout_width="match_parent"
-            android:layout_height="324dp"
-            android:layout_gravity="center"
-            android:foregroundGravity="top"
-            android:background="#FFFFFF"
-            android:visibility="visible"
-            android:datePickerMode="spinner"/>
-    </FrameLayout>
-
-
     <RadioGroup
         android:id="@+id/rg_choose_gender"
         android:layout_width="wrap_content"
@@ -147,7 +125,7 @@
             android:id="@+id/tv_choose_gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Gender"
+            android:text="@string/tv_text_gender"
             android:textColor="#FFFFFF" />
 
         <RadioButton
@@ -156,6 +134,7 @@
             android:layout_height="wrap_content"
             android:background="#000000"
             android:buttonTint="#FFFFFF"
+            android:paddingStart="8dp"
             android:paddingEnd="8dp"
             android:text="@string/rb_text_female"
             android:textColor="#FFFFFF" />

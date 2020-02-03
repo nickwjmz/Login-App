@@ -157,8 +157,10 @@ public class CreateAccount extends AppCompatActivity {
     }
 
     public void UserInfo(View view) {
-        Intent intent = new Intent();
-        intent.setClass(CreateAccount.this, UserInfo.class);
+        String password = textInputPassword.getText().toString();
+
+        Intent intent = new Intent(CreateAccount.this, UserInfo.class);
+        intent.putExtra("Password", password);
         startActivity(intent);
     }
 

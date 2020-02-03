@@ -29,6 +29,7 @@ public class UserInfo extends AppCompatActivity {
 
     EditText etName;
     EditText etUsername;
+    EditText etPassword;
     Button btnChangePhoto;
     EditText etAge;
     RadioGroup rgChooseGender;
@@ -46,10 +47,14 @@ public class UserInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate: ");
-
         setContentView(R.layout.activity_user_info);
+        Bundle bundle = getIntent().getExtras();
+        String Password = bundle.getString("Password");
+
         etName = findViewById(R.id.et_name);
         etUsername = findViewById(R.id.et_username);
+        etPassword = findViewById(R.id.et_password);
+        etPassword.setText(Password);
         etPostalAddress = findViewById(R.id.et_postal_address);
         spUserCountry = findViewById(R.id.sp_user_country);
         btnChangePhoto = findViewById(R.id.btn_change_photo);

@@ -132,7 +132,7 @@
         android:textSize="16sp" />
 
     <Button
-        android:id="@+id/btnNext"
+        android:id="@+id/btn_next"
         android:layout_width="350dp"
         android:layout_height="64dp"
         android:background="@drawable/gradient_button_background"

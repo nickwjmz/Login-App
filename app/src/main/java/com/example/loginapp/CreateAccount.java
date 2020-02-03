@@ -19,6 +19,7 @@ public class CreateAccount extends AppCompatActivity {
     private EditText textInputEmail;
     private EditText textInputPassword;
     private EditText textInputConfirm;
+    Button btnNext;
 
     private boolean validateEmail() {
         String emailInput = textInputEmail.getText().toString().trim();
@@ -102,6 +103,9 @@ public class CreateAccount extends AppCompatActivity {
         textInputEmail = findViewById(R.id.etEmail);
         textInputPassword = findViewById(R.id.etCreatePw);
         textInputConfirm = findViewById(R.id.etRepeatPw);
+        btnNext = findViewById(R.id.btn_next);
+
+        btnNext.setEnabled(false);
 
         final TextView emailError = findViewById(R.id.error_email);
         emailError.setVisibility(View.GONE);
@@ -114,13 +118,9 @@ public class CreateAccount extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     if (validateEmail()) {
-                        textInputEmail.setCompoundDrawablesWithIntrinsicBounds(0,
-                                0, R.drawable.tick, 0);
                         emailError.setVisibility(View.GONE);
                     } else {
                         emailError.setVisibility(View.VISIBLE);
-                        textInputEmail.setCompoundDrawablesWithIntrinsicBounds(0,
-                                0, 0, 0);
                     }
                 }
             }
@@ -131,8 +131,6 @@ public class CreateAccount extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     if (validatePassword()) {
-                        textInputPassword.setCompoundDrawablesWithIntrinsicBounds(0,
-                                0, R.drawable.tick, 0);
                         passwordError.setVisibility(View.GONE);
                     } else {
                         passwordError.setVisibility(View.VISIBLE);
@@ -147,17 +145,15 @@ public class CreateAccount extends AppCompatActivity {
                 if (!hasFocus) {
                     if (validateConfirm()) {
                         passwordError.setVisibility(View.GONE);
+                        if (validateEmail()) {
+                            btnNext.setEnabled(true);
+                        }
                     } else {
                         passwordError.setVisibility(View.VISIBLE);
                     }
                 }
             }
         });
-
-        if (validateConfirm() && validateEmail() && validatePassword()) {
-            Button b = findViewById(R.id.btnNext);
-            b.setEnabled(true);
-        }
     }
 
     public void UserInfo(View view) {

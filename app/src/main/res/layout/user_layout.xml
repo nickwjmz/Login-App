@@ -8,6 +8,7 @@
     android:layout_marginTop="16dp"
     android:layout_marginRight="16dp"
     android:layout_marginBottom="16dp"
+    android:background="#565656"
     tools:context=".UserInfo">
 
     <ImageView
@@ -23,13 +24,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="name"
+        android:textColor="#FFFFFF"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="4dp"
         app:layout_constraintLeft_toRightOf="@id/iv_user_profile_pic"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_user_username"
+        android:textColor="#FFFFFF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
         android:hint="username"
         app:layout_constraintLeft_toRightOf="@id/iv_user_profile_pic"
         app:layout_constraintTop_toBottomOf="@id/tv_user_name"
@@ -37,36 +48,59 @@
 
     <TextView
         android:id="@+id/tv_user_country"
+        android:textColor="#FFFFFF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="country"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="8dp"
         app:layout_constraintLeft_toRightOf="@id/iv_user_profile_pic"
         app:layout_constraintTop_toBottomOf="@id/tv_user_postal_address"
         tools:layout_editor_absoluteX="88dp" />
 
     <TextView
         android:id="@+id/tv_user_birthday"
+        android:textColor="#FFFFFF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="birthday"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="4dp"
+        android:layout_marginRight="64dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_user_gender"
+        android:textColor="#FFFFFF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="gender"
-        app:layout_constraintTop_toBottomOf="@id/tv_user_birthday"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:layout_marginRight="64dp"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_user_birthday"
         tools:layout_editor_absoluteX="99dp" />
 
     <TextView
         android:id="@+id/tv_user_postal_address"
+        android:textColor="#FFFFFF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="postal address"
-        app:layout_constraintTop_toBottomOf="@id/tv_user_username"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
         app:layout_constraintLeft_toRightOf="@id/iv_user_profile_pic"
+        app:layout_constraintTop_toBottomOf="@id/tv_user_username"
         tools:layout_editor_absoluteX="88dp" />
-    \</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

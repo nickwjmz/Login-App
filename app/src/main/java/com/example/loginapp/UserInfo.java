@@ -78,6 +78,7 @@ public class UserInfo extends AppCompatActivity {
    }
 
     public void onRadioButtonClicked(View view) {
+        Log.d(TAG, "onRadioButtonClicked: ");
         // Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();
 
@@ -101,6 +102,7 @@ public class UserInfo extends AppCompatActivity {
         }
     }
     public int getAge( int year, int month, int day){
+        Log.d(TAG, "getAge: ");
         Calendar dob = Calendar.getInstance();
         Calendar today = Calendar.getInstance();
         dob.set(year, month, day);
@@ -114,8 +116,7 @@ public class UserInfo extends AppCompatActivity {
     }
 
     public void ListOfUsers(View view) {
-        Intent intent = new Intent();
-        intent.setClass(UserInfo.this, ListOfUsers.class);
+        Log.d(TAG, "ListOfUsers: ");
         PojoUsers userInfo = new PojoUsers();
 
         userInfo.setName(etName.getText().toString());
@@ -125,8 +126,11 @@ public class UserInfo extends AppCompatActivity {
         userInfo.setGender(gender);
         userInfo.setPostalAddress(etPostalAddress.getText().toString());
 
+        Intent intent = new Intent();
+        intent.setClass(UserInfo.this, ListOfUsers.class);
         intent.putExtra("data", userInfo);
         startActivity(intent);
+
     }
 }
 

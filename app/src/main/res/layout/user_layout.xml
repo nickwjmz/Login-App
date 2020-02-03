@@ -1,61 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:paddingStart="@dimen/cardview_compat_inset_shadow"
-    android:paddingEnd="@dimen/cardview_compat_inset_shadow"
-    android:orientation="horizontal"
     android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
     android:layout_marginTop="16dp"
-    android:layout_marginBottom="16dp">
+    android:layout_marginRight="16dp"
+    android:layout_marginBottom="16dp"
+    tools:context=".UserInfo">
 
     <ImageView
         android:id="@+id/iv_user_profile_pic"
         android:layout_width="88dp"
         android:layout_height="108dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <LinearLayout
+
+    <TextView
+        android:id="@+id/tv_user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:hint="name"
+        app:layout_constraintLeft_toRightOf="@id/iv_user_profile_pic"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tv_user_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/iv_user_profile_pic"
-            app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/tv_user_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="username"
+        app:layout_constraintLeft_toRightOf="@id/iv_user_profile_pic"
+        app:layout_constraintTop_toBottomOf="@id/tv_user_name"
+        tools:layout_editor_absoluteX="88dp" />
 
-        <TextView
-            android:id="@+id/tv_user_username"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/tv_user_name"
-            app:layout_constraintStart_toStartOf="@id/tv_user_name"
-            app:layout_constraintLeft_toRightOf="@id/iv_user_profile_pic"/>
+    <TextView
+        android:id="@+id/tv_user_country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="country"
+        app:layout_constraintLeft_toRightOf="@id/iv_user_profile_pic"
+        app:layout_constraintTop_toBottomOf="@id/tv_user_postal_address"
+        tools:layout_editor_absoluteX="88dp" />
 
-        <TextView
-            android:id="@+id/tv_user_country"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_user_birthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="birthday"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-        <TextView
-            android:id="@+id/tv_user_birthday"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tv_user_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="gender"
+        app:layout_constraintTop_toBottomOf="@id/tv_user_birthday"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteX="99dp" />
 
-        <TextView
-            android:id="@+id/tv_user_gender"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/tv_user_postal_address"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-</LinearLayout>
+    <TextView
+        android:id="@+id/tv_user_postal_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="postal address"
+        app:layout_constraintTop_toBottomOf="@id/tv_user_username"
+        app:layout_constraintLeft_toRightOf="@id/iv_user_profile_pic"
+        tools:layout_editor_absoluteX="88dp" />
+    \</androidx.constraintlayout.widget.ConstraintLayout>

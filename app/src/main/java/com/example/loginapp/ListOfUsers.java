@@ -5,24 +5,27 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListOfUsers extends AppCompatActivity {
+    private static final String TAG = "ListOfUsers";
 
     RecyclerView recyclerView;
-    UserAdapter adapter = new UserAdapter();
-    PojoUsers user;
 
-    List<PojoUsers> dataSet = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_of_users);
 
-        user = getIntent().getParcelableExtra("data");
+        PojoUsers user;
+
+        user = getIntent().getExtras().getParcelable("data");
+        UserDataBase.userDB.add(user);
+
 
         // RecyclerView set as a LinearLayout
         recyclerView = findViewById(R.id.recycler_view);
@@ -30,8 +33,8 @@ public class ListOfUsers extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
 
         // Adapter
-        adapter = new UserAdapter();
+        UserAdapter adapter = new UserAdapter();
         recyclerView.setAdapter(adapter);
-        adapter.setDataSet(dataSet);
+        adapter.setDataSet(UserDataBase.userDB);
     }
 }

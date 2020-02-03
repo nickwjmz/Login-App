@@ -21,7 +21,7 @@ public class UserViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
         tvName = itemView.findViewById(R.id.tv_user_name);
         tvUsername = itemView.findViewById(R.id.tv_user_username);
-        tvGender = itemView.findViewById(R.id.tv_choose_gender);
+        tvGender = itemView.findViewById(R.id.tv_user_gender);
         tvCountry = itemView.findViewById(R.id.tv_user_country);
         tvPostalAddress = itemView.findViewById(R.id.tv_user_postal_address);
         tvBirthday = itemView.findViewById(R.id.tv_user_birthday);
